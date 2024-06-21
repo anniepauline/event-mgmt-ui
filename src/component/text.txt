@@ -1,0 +1,27 @@
+ <Controller
+              name="domain"
+              control={control}
+              rules={{
+                required: "Domain is Required",
+              }}
+              render={({ field }) => (
+                <Select
+                  label="Select Domain"
+                  {...field}
+                  error={Boolean(errors?.domain?.message)}
+                >
+                  <Option value="designer">Designer</Option>
+                  <Option value="dev">Developer</Option>
+                  <Option value="tester">Tester</Option>
+                  <Option value="others">Others</Option>
+                </Select>
+              )}
+            />
+            {errors?.domain?.message && (
+              <span className="error-text">{errors?.domain?.message}</span>
+            )}
+
+         <input type="password" placeholder="Password" 
+            name = "password"   
+            value={input.password}
+          className="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500 form-control" />
